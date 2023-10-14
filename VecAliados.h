@@ -21,16 +21,13 @@ public:
 			delete enf;
 		}
 		this->vecEnf.clear();
-
 	}
-
-	void agregarEnfermera(Graphics^ g) {
-
-		Enfermera* enf = new Enfermera(g);
+	void agregarEnfermera(int tipoNiv, Graphics^ g) {
+		Enfermera* enf = new Enfermera(tipoNiv, g);
 		this->vecEnf.push_back(enf);
 	}
-	void agregarFumigador(Graphics^ g) {
-		Fumigador* fum = new Fumigador(g);
+	void agregarFumigador(int tipoNiv,Graphics^ g) {
+		Fumigador* fum = new Fumigador(tipoNiv,g);
 		this->vecFum.push_back(fum);
 	}
 
@@ -41,6 +38,5 @@ public:
 		for (Enfermera* enf : vecEnf) {
 			enf->MoverEnfermera(g, imgenfermera);
 		}
-
 	}
 };

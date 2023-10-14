@@ -2,12 +2,11 @@
 #include "Entidad.h"
 
 class Fumigador : public Entidad {
-private:
-
 public:
-	Fumigador(Graphics^ g) : Entidad(50, 50, 0, 0, 3, 4) {
+	Fumigador(int tipoNiv,Graphics^ g) : Entidad(50, 50, 0, 0, 3, 4) {
 		x = -150;
-		y = g->VisibleClipBounds.Height / 2 + 70;
+		if(tipoNiv == 1) y = g->VisibleClipBounds.Height / 2 + 90;
+		else y = g->VisibleClipBounds.Height / 2 + 70;
 		dx = 5;
 		dy = 0;
 		orientacion = Derecha;
@@ -15,7 +14,6 @@ public:
 	~Fumigador() {
 
 	}
-
 
 	void mostrar(Graphics^ g, Bitmap^ bmpFumigador) {
 		ancho = bmpFumigador->Width / maxindiceX;
@@ -27,7 +25,6 @@ public:
 		g->DrawImage(bmpFumigador, aumentoBMP, porcionAUsar, GraphicsUnit::Pixel);
 	}
 
-	//Esto se llama para dibujar todo 
 	void MoverFumigador(Graphics^ g, Bitmap^ bmpFumigador) {
 		if (x + EscalaAncho < (g->VisibleClipBounds.Width / 4)) {
 			x += dx;
@@ -70,11 +67,5 @@ public:
 			break;
 		}
 		mostrar(g, bmpFumigador);
-
-		/*desplazamiento(orientacion);
-		mostrar(g, bmpEnfermera);*/
-		//restricciones(g);
 	}
-
 };
-

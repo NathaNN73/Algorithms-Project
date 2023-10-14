@@ -121,19 +121,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Creditos.cpp" />
+    <ClCompile Include="Ganaste.cpp" />
+    <ClCompile Include="GanasteBosque.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Instrucciones.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="NivelAvanzado.cpp" />
+    <ClCompile Include="NivelNormal.cpp" />
+    <ClCompile Include="Perdiste1.cpp" />
+    <ClCompile Include="PerdisteBosque.cpp" />
     <ClCompile Include="Room.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Creditos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Enemigo1.h" />
     <ClInclude Include="Enemigo2.h" />
     <ClInclude Include="Enemigo3.h" />
     <ClInclude Include="Enfermera.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Fumigador.h" />
+    <ClInclude Include="Ganaste.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GanasteBosque.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -142,10 +156,18 @@
     </ClInclude>
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Medicina.h" />
+    <ClInclude Include="Moco.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="NivelAvanzado.h">
+    <ClInclude Include="NivelNormal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Perdiste1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PerdisteBosque.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Proyectil.h" />
@@ -156,11 +178,32 @@
     <ClInclude Include="VecEnemigos.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Creditos.resx">
+      <DependentUpon>Creditos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ganaste.resx">
+      <DependentUpon>Ganaste.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GanasteBosque.resx">
+      <DependentUpon>GanasteBosque.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instrucciones.resx">
+      <DependentUpon>Instrucciones.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NivelNormal.resx">
+      <DependentUpon>NivelNormal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perdiste1.resx">
+      <DependentUpon>Perdiste1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerdisteBosque.resx">
+      <DependentUpon>PerdisteBosque.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Room.resx">
       <DependentUpon>Room.h</DependentUpon>

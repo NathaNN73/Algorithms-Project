@@ -14,11 +14,10 @@ public:
 		this->activo = true;
 		this->pendiente = pendiente;
 		this->b = b;
-		this->dx = 10 * factor;
+		this->dx = 20 * factor;
 	}
 
 	~Proyectil(){}
-
 	void mover(Graphics^ g) {
 		if (x + dx >= 0 && x + ancho / 9 + dx < g->VisibleClipBounds.Width) {
 			x += dx;
@@ -32,16 +31,12 @@ public:
 			activo = false;
 		}
 	}
-	//SE LLAMA SIMPLEMENTE A ESTO
 	void mostrar(Graphics^ g, Bitmap^ bmp) {
-
 		ancho = bmp->Width / maxindiceX;
 		alto = bmp->Height / maxindiceY;
 		Rectangle porcion = Rectangle(indiceX * ancho, indiceY * alto, ancho, alto);
-		Rectangle escala = Rectangle(x, y, ancho / 9 , alto / 9);
-
+		Rectangle escala = Rectangle(x, y, ancho / 18 , alto / 18);
 		g->DrawImage(bmp, escala, porcion, GraphicsUnit::Pixel);
-
 		indiceX++;
 		if (indiceX == maxindiceX) {
 			indiceX = 0;
@@ -50,4 +45,5 @@ public:
 		}
 		mover(g);
 	}
+	Rectangle getArea() { return Rectangle(x, y, ancho/18 ,alto/ 18); }
 };
